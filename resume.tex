@@ -1,0 +1,217 @@
+\documentclass[11pt,a4paper]{article}
+% 使用ctexart文档类，自动配置中文字体
+\usepackage[UTF8]{ctex}
+
+% \usepackage{xeCJK}
+% 设置字体
+\setCJKmainfont{SimSun}[AutoFakeBold=2.5]  % 宋体
+% \setCJKmainfont[AutoFakeBold=1.3, ItalicFont={KaiTi}]{FangSong}
+% \setCJKmainfont[AutoFakeBold=4,AutoFakeSlant=0.2]{SimSun}
+\setCJKsansfont{Microsoft YaHei}  % 微软雅黑
+\setmainfont{Times New Roman}  % 英文衬线字体
+\setsansfont{Arial}  % 英文无衬线字体
+\newCJKfontfamily\cjkit{KaiTi}[AutoFakeBold=2,AutoFakeSlant=0.2]
+% 基础包
+\usepackage{hyperref}
+\usepackage[margin=0.75in]{geometry}  % 调整边距
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{color}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}  % 用于文本对齐
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{CJKfntef}
+\usepackage[chinese, provide=*]{babel}
+\usepackage{hologo}
+\usepackage{metalogo}
+
+% \babelfont{rm}{FandolSong}
+% 自定义颜色
+\definecolor{linkcolor}{RGB}{0,122,255}     % 链接蓝
+\definecolor{graytext}{RGB}{100,100,100}    % 调整副文本灰色
+\definecolor{sectioncolor}{RGB}{40,40,40}   % 调整标题颜色
+
+% 自定义链接样式
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkcolor,
+    linkcolor=linkcolor
+}
+
+
+% 调整全局行间距
+\renewcommand{\baselinestretch}{0.95}  % 减小行间距
+% 自定义列表样式
+\setlist[itemize]{
+    leftmargin=*,
+    nosep,
+    topsep=0.1em,     % 减小顶部间距
+    parsep=0.2em,     % 减小段落间距
+    itemsep=0.2em,    % 减小项目间距
+    before={\vspace{0.2em}},  % 减小列表前间距
+    after={\vspace{0.4em}}    % 减小列表后间距
+}
+% 重定义section命令
+\renewcommand{\section}[1]{%
+    \vspace{0.6em}%    % 减小节前间距
+    {\sffamily\Large\bfseries\color{sectioncolor}#1}%
+    \vspace{0.2em}%    % 减小标题和分隔线间距
+    \hrule height 0.5pt
+    \vspace{0.4em}%    % 减小分隔线和内容间距
+}
+\newcommand{\arrowsymbol}{\ensuremath{\Rightarrow}}
+% 调整标题和联系方式的间距
+\newcommand{\name}[1]{%
+    {\sffamily\Huge\bfseries #1}\\[0.2em]  % 减小标题后间距
+}
+% 调整公司信息和职位的间距
+\newcommand{\company}[1]{%
+    {\vspace{0.2em}\sffamily\textbf{\large#1}}%
+      % 增加公司信息后的垂直间距
+}
+\newcommand{\position}[2]{%
+    \vspace{0.1em}  % 减小与公司名的间距
+    \role{#1}\hfill\role{#2}%
+    \vspace{0.2em}  % 减小与列表的间距
+}
+% 定义个人信息表格列格式
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+% 自定义命令
+\newcommand{\role}[1]{{\sffamily\color{graytext}\small#1}}
+\newcommand{\daterange}[1]{\hfill{\sffamily\color{graytext}\small#1}}
+\newcommand{\skill}[1]{\textbf{#1}}
+\newcommand{\project}[1]{{\sffamily\textbf{\cjkit { \textit {\itshape#1}}}}}
+\newcommand{\separator}{\textbullet~}  % 分隔符
+
+\begin{document}
+
+\cjkit 
+\textit{注：本简历使用 \href{https://www.latex-project.org/}{\LaTeX} 和 \XeTeX 编写, 隐私信息已脱敏。}
+% \babelfont{rm}{FandolSong}
+
+% \CJKfontslant{这是伪斜体中文。}
+
+% 标题部分
+\begin{center}
+    \name{***}
+\end{center}
+
+\noindent \begin{tabularx}{\textwidth}{@{}L L L@{}}
+\faPhone \ 188******** & 
+\faEnvelope \ \href{mailto:***@***.com}{***@***.com} &
+\faGithub \ \href{https://gitee.com/***}{gitee.com/***} \\[0.2em]
+\faMapMarker \ 武汉市*** &
+\faGlobe \ \href{https://***.pages.dev}{***.pages.dev} &
+\faBlog \ \href{https://www.cnblogs.com/***}{cnblogs.com/***}
+\end{tabularx}
+
+% 简介部分
+\section{个人简介}
+\begin{itemize}
+    \item 3年软件开发经验，熟练运用多种编程语言，具备跨平台开发能力
+    \item 热衷于技术创新，善于解决复杂问题，追求高质量代码和高性能应用
+    \item 熟悉软件开发流程，具有需求\arrowsymbol 分析\arrowsymbol 设计\arrowsymbol 开发\arrowsymbol 测试\arrowsymbol 上线\arrowsymbol 维护流程的推动、完善与团队协作能力，能快速适应新环境并贡献价值
+\end{itemize}
+
+\section{专业技能}
+\begin{itemize}
+    \item \skill{多平台应用开发:} KMP, Flutter, Electron 等 \separator 跨平台开发 \separator 响应式UI
+    \item \skill{编程语言:} 熟悉 Kotlin, Java, Python, TypeScript, Dart, Rust等\separator 精通面向对象设计、函数式编程
+    \item \skill{常用技术栈:}
+        \begin{itemize}
+            \sloppy
+            \item 后端开发: RESTful API设计 \separator Spring框架(MVC-WebFlux 及 JDBC-R2DBC, Security, AI) \allowbreak \separator Kotlin(Ktor, Exposed) \separator 数据库(关系型: MySQL, PostgreSQL, SQLite, 非关系型: MongoDB, Redis, 图形关系型: Neo4j, 数据集型: Elasticsearch 等)的设计与优化 \allowbreak \separator 构建工具: Maven, Gradle
+            \item 前端开发: Vuejs, Reactjs \separator 编程语言: TypeScript, JavaScript, Other \separator 运行时: Nodejs, Bun , Deno, WebAssembly \separator 构建工具: Vite, Webpack \separator 包管理: npm, pnpm, yarn
+            \item 多平台应用开发: Jetpack Compose \separator Flutter \separator Electron \separator UniApp X \separator HarmonyApp \separator 设计风格: Material Design, Other \separator 同其他技术栈的集成
+            \item IDE: IntelliJ IDEA, VSCode, Android Studio, IntelliJ Fleet, DevEco Studio \separator Extensions or Plugins
+        \end{itemize}
+\end{itemize}
+
+\section{工作经验}
+\company{XXXXX公司} 
+\position{***}{***}
+\daterange{*** - ***}
+\begin{itemize}
+    \item 参与核心产品开发，优化架构提升性能，实现复杂业务逻辑，保证代码质量
+    \item 协作开发，参与并主导需求分析、代码审查，改进开发流程，解决技术难题，研究并应用新技术
+\end{itemize}
+
+\project{XXX系统}
+\begin{itemize}
+    \item 项目目标: 实时监控IT基础设施，快速识别并使相关人员快速处理故障，提高系统可靠性，生成符合标准的报告
+        \begin{itemize}
+            \item 负责工作： 项目规划与任务分工、需求分析及交付文档编写 \separator 开发技术选型与架构配置、后端代码开发、代码审查 \separator 测试计划制定及执行
+            \item 项目细节与成效: 在团队高效沟通下，项目进展顺利。项目在前后端分离的情况下, 前端使用 \href{https://cn.vuejs.org/}{Vuejs} 基于 \href{https://ant.design/index-cn}{Ant Design} 来构建用户界面, 后端采用 \href{https://spring.io/}{Spring} 系列项目来搭建应用模块, 使用 \href{https://docs.spring.io/spring-framework/reference/web-reactive.html}{Spring WebFlux} + \href{https://spring.io/projects/spring-data-r2dbc}{R2DBC} 处理生成高效的 \href{https://www.ibm.com/cn-zh/topics/rest-apis}{Restful API}, 
+            鉴权控制使用 \href{https://spring.io/projects/spring-security}{Spring Security} 同时为其他系统保留 \href{https://oauth.ac.cn/2/}{OAuth2.0 } 接口，使用 \href{https://www.mysql.com/cn/}{MySQL} 作为数据库底层，
+            采用基于\href{https://www.omg.org/spec/CMMN}{CMMN} 和 \href{https://www.omg.org/spec/BPMN/2.0}{BPMN2.0} 规范的 \href{https://www.flowable.com/open-source/docs/}{Flowable} 引擎来实现工作流, 这里遗憾的是其开源版本只有 Block-IO JPA 实现，由于时间关系并未补充其 NoBlock-IO 实现, 所以这里用了 \href{https://spring.io/projects/spring-data-jpa}{JPA} 。
+            同时项目使用 \href{https://spring.io/projects/spring-ai}{Spring AI} 融合 \href{https://qwen.readthedocs.io/zh-cn/latest/index.html}{qwen} 等模型建立生成式对话。
+            项目使用 \href{https://about.gitea.com/}{Gitea} 在内部网络搭建仓库进行协同开发和管理。
+        \end{itemize}
+    
+\end{itemize}
+
+\company{XXXXX公司} 
+\position{***}{***}
+\daterange{*** - ***}
+\begin{itemize}
+    \item 参与少儿编程的课程设计与研发，包括 Scratch 图形化编程及Lego WeDo 编程，支撑学员教学工作
+    \item 提供计算机技术支持、软件开发支持
+\end{itemize}
+
+\company{XXXXX公司} 
+\position{***}{***}
+\daterange{*** - ***}
+\begin{itemize}
+    \item 参与项目系统设计，负责部分产品需求分析、接口设计和开发详设文档编写；根据产品需求，独立完成部分系统的后端开发及数据库表设计工作，完成开发中相关业务接口的定义及实现工作；
+    \item 负责 Srpingboot、Spring cloud、Mybatis 应用开发及后端代码持续的维护和性能调优；完成直接上级交办的其他工作任务。
+\end{itemize}
+
+\project{XXX系统}
+\daterange{*** - ***}
+\begin{itemize}
+    \item 项目目标：构建一个全面的医疗健康大数据体系，为医疗卫生领域提供定制化的大数据分析与数据治理平台。旨在为医护科研人员提供一个一站式的大数据共享平台，支持医疗监控、服务和协同应用。
+        \begin{itemize}
+            \item 核心工作内容： 模块设计与实现：负责接口和数据库设计，以及代码结构的设计与实现 \separator 涉及文档数据处理：使用 \href{https://poi.apache.org/}{Apache POI} 处理表格数据，执行数据校验和文件操作 \separator ORM框架应用：利用 Hibernate JPA 操纵管理数据库，实现业务逻辑，并开发实现相关API接口。
+            \item 其他开发职责：数据编码与转换：进行数据编码、数据集转换处理和编辑 \separator 负责项目过程文档和产品文档的编写工作。
+        \end{itemize}
+\end{itemize}
+
+\project{XXX系统}
+\daterange{*** - ***}
+\begin{itemize}
+    \item 项目目标：构建国内领先的生物信息数据库，致力于成为科研领域内的专业综合网站，通过提供先进的数据检索、采集和处理工具，提升科研水平。
+    \item 核心职责： 数据采集与处理： 利用 \href{https://webmagic.io/}{WebMagic} 配置爬虫，实现对国外科研知识数据库的检索与采集，将数据转换并存储为特定数据集 \separator 
+            数据处理工具开发： 提供自定义脚本处理功能，支持科研人员进行数据分析，并实现数据的可视化展示 \separator 
+            后端开发： 使用 \href{https://mybatis.org/mybatis-3/zh/index.html}{Mybatis} 及 \href{https://mybatis.plus/}{MybatisPlus} 开发数据功能模块，实现业务逻辑和数据操纵 \separator 
+            API接口完善： 负责API接口的开发与维护，确保接口的稳定性和扩展性 \separator 代码质量管理： 承担代码审计和走读工作，确保代码质量，跟踪项目进度。
+\end{itemize}
+
+\project{XXX系统}
+\daterange{*** - ***}
+\begin{itemize}
+    \item 项目概述：通过实施高效的流程管理，该项目实现了从研发到第三方的数据与工作流程互联互通。系统集成多项关键管理模块，从而能够有效提升整体工作效率和研发数据的有效性。
+    \item 技术实现与职责：系统架构与开发：负责后端架构设计，确保系统功能完整性，包括数据库和接口设计 \separator 工作流引擎集成：使用  \href{https://github.com/snakerflow-starter/snakerflow-spring-boot-starter}{SnakerFlow} 引擎，实现流程自动化和管理 \separator 运用Maven进行项目依赖管理和分层开发 \separator
+        基于\href{https://kkview.cn/zh-cn/index.html}{kkFileView} 定制开发，提升文件预览体验 \separator 接口开发：利用 \href{https://www.ssssssss.org/magic-api/}{Magic-API} 快速实现API接口 \separator
+        权限管理：通过 \href{https://sa-token.cc/}{Sa-token} 实现RBAC模型，确保系统安全 \separator 文档数据处理：使用 \href{https://easyexcel.opensource.alibaba.com/}{EasyExcel} 优化Excel文件的数据处理。
+
+\end{itemize}
+   
+
+
+\project{XXX系统}
+\daterange{*** - ***}
+\begin{itemize}
+    \sloppy
+    \item 负责心理测评系统的完整后端开发工作，确保系统功能与业务需求相符合 \separator 设计并实现了基于 SpringSecurity 的系统鉴权认证机制，采用RBAC模型确保用户权限的精确控制 \separator
+    利用 \href{https://gitee.com/wupaas/easypoi}{easypoi} 工具高效处理表格数据转换，并进行数据校验，保障数据准确性和一致性 \separator 通过MybatisPlus工具快速搭建系统数据持久层，完成数据库模块的设计与实现 \separator 配置Nginx作为反向代理服务器，并部署Tomcat服务器，优化系统以应对高并发访问情况。
+\end{itemize}
+
+\section{教育背景}
+\company{***} 
+\position{*** \separator ***，***学位}{}
+
+\daterange{*** - ***}
+
+\end{document}
