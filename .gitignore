@@ -3,4 +3,5 @@ resume.log
 resume.toc
 resume.out
 resume.synctex.gz
-
+pandoc_filter.log
+pandoc.log
