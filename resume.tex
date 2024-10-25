@@ -26,23 +26,18 @@
 \usepackage[chinese, provide=*]{babel}
 \usepackage{hologo}
 \usepackage{metalogo}
-
+\usepackage{amsmath} % 导入amsmath包以使用\hdashline命令
 % \babelfont{rm}{FandolSong}
 % 自定义颜色
 \definecolor{linkcolor}{RGB}{0,122,255}     % 链接蓝
 \definecolor{graytext}{RGB}{100,100,100}    % 调整副文本灰色
 \definecolor{sectioncolor}{RGB}{40,40,40}   % 调整标题颜色
-
 % 自定义链接样式
 \hypersetup{
     colorlinks=true,
     urlcolor=linkcolor,
     linkcolor=linkcolor
 }
-
-
-% 调整全局行间距
-\renewcommand{\baselinestretch}{0.95}  % 减小行间距
 % 自定义列表样式
 \setlist[itemize]{
     leftmargin=*,
@@ -53,6 +48,8 @@
     before={\vspace{0.2em}},  % 减小列表前间距
     after={\vspace{0.4em}}    % 减小列表后间距
 }
+% 调整全局行间距
+\renewcommand{\baselinestretch}{0.95}  % 减小行间距
 % 重定义section命令
 \renewcommand{\section}[1]{%
     \vspace{0.6em}%    % 减小节前间距
@@ -63,9 +60,7 @@
 }
 \newcommand{\arrowsymbol}{\ensuremath{\Rightarrow}}
 % 调整标题和联系方式的间距
-\newcommand{\name}[1]{%
-    {\sffamily\Huge\bfseries #1}\\[0.2em]  % 减小标题后间距
-}
+\newcommand{\name}[1]{{\sffamily\huge\bfseries #1}\\[- 0.2em]}
 % 调整公司信息和职位的间距
 \newcommand{\company}[1]{%
     {\vspace{0.2em}\sffamily\textbf{\large#1}}%
@@ -94,40 +89,45 @@
 % \CJKfontslant{这是伪斜体中文。}
 
 % 标题部分
+
 \begin{center}
     \name{***}
 \end{center}
 
-\noindent \begin{tabularx}{\textwidth}{@{}L L L@{}}
-\faPhone \ 188******** & 
-\faEnvelope \ \href{mailto:***@***.com}{***@***.com} &
-\faGithub \ \href{https://gitee.com/***}{gitee.com/***} \\[0.2em]
-\faMapMarker \ 武汉市*** &
-\faGlobe \ \href{https://***.pages.dev}{***.pages.dev} &
-\faBlog \ \href{https://www.cnblogs.com/***}{cnblogs.com/***}
-\end{tabularx}
-
 % 简介部分
 \section{个人简介}
+\noindent \begin{tabularx}{\textwidth}{@{}L L L@{}}
+    \faPhone \ 1********** & 
+    \faEnvelope \ \href{mailto:***@***.com}{***@***.com} &
+    \faGithub \ \href{https://gitee.com/***}{gitee.com/***} \\[0.2em]
+    \faMapMarker \ 武汉市*** &
+    \faGlobe \ \href{https://***.pages.dev}{***.pages.dev} &
+    \faBlog \ \href{https://www.cnblogs.com/***}{cnblogs.com/***}
+\end{tabularx}
+
 \begin{itemize}
     \item 3年软件开发经验，熟练运用多种编程语言，具备跨平台开发能力
     \item 热衷于技术创新，善于解决复杂问题，追求高质量代码和高性能应用
-    \item 熟悉软件开发流程，具有需求\arrowsymbol 分析\arrowsymbol 设计\arrowsymbol 开发\arrowsymbol 测试\arrowsymbol 上线\arrowsymbol 维护流程的推动、完善与团队协作能力，能快速适应新环境并贡献价值
+    \item 熟悉软件开发流程: 需求\arrowsymbol 分析\arrowsymbol 设计\arrowsymbol 开发\arrowsymbol 测试\arrowsymbol 上线\arrowsymbol 维护及流程间的推动、完善与团队协作能力，能快速适应新环境并创造价值
 \end{itemize}
 
 \section{专业技能}
 \begin{itemize}
-    \item \skill{多平台应用开发:} KMP, Flutter, Electron 等 \separator 跨平台开发 \separator 响应式UI
-    \item \skill{编程语言:} 熟悉 Kotlin, Java, Python, TypeScript, Dart, Rust等\separator 精通面向对象设计、函数式编程
-    \item \skill{常用技术栈:}
-        \begin{itemize}
-            \sloppy
-            \item 后端开发: RESTful API设计 \separator Spring框架(MVC-WebFlux 及 JDBC-R2DBC, Security, AI) \allowbreak \separator Kotlin(Ktor, Exposed) \separator 数据库(关系型: MySQL, PostgreSQL, SQLite, 非关系型: MongoDB, Redis, 图形关系型: Neo4j, 数据集型: Elasticsearch 等)的设计与优化 \allowbreak \separator 构建工具: Maven, Gradle
-            \item 前端开发: Vuejs, Reactjs \separator 编程语言: TypeScript, JavaScript, Other \separator 运行时: Nodejs, Bun , Deno, WebAssembly \separator 构建工具: Vite, Webpack \separator 包管理: npm, pnpm, yarn
-            \item 多平台应用开发: Jetpack Compose \separator Flutter \separator Electron \separator UniApp X \separator HarmonyApp \separator 设计风格: Material Design, Other \separator 同其他技术栈的集成
-            \item IDE: IntelliJ IDEA, VSCode, Android Studio, IntelliJ Fleet, DevEco Studio \separator Extensions or Plugins
-        \end{itemize}
+    \item Core Dev: \href{https://baike.baidu.com/item/跨平台技术}{Multi-platform} \separator \href{https://baike.baidu.com/item/后端工程师}{Backend} \separator 
+    \href{https://baike.baidu.com/item/敏捷开发模式/8395733}{Agile} \separator \href{https://www.ibm.com/cn-zh/topics/rest-apis}{RESTful API} \separator \href{https://baike.baidu.com/item/前端/5956545}{Frontend}
+    \item Tech Stack: \href{https://spring.io/}{Spring} \separator \href{https://www.jetbrains.com/kotlin/}{Kotlin} \separator 
+    \href{https://www.mysql.com/cn/}{Database} \separator \href{https://maven.apache.org/}{Maven} , \href{https://gradle.org/}{Gradle} \separator
+    \href{https://vuejs.org/}{Vuejs}, \href{https://react.dev/}{Reactjs} \separator \href{https://www.typescriptlang.org/}{TypeScript}, \href{https://www.javascript.com/}{JavaScript} \separator 
+    \href{https://nodejs.org/en/}{Nodejs}, \href{https://bun.sh/}{Bun} , \href{https://deno.com/}{Deno}, \href{https://webassembly.org/}{WebAssembly} \separator
+    \href{https://vitejs.dev/}{Vite} \separator \href{https://developer.android.google.cn/jetpack/compose}{Jetpack Compose} \separator \href{https://flutter.dev/}{Flutter} \separator 
+    \href{https://www.electronjs.org/}{Electron} \separator \href{https://uniapp.dcloud.net.cn/}{UniApp X} \separator \href{https://developer.huawei.com/consumer/cn/}{HarmonyOS App}
+    \item IDE \& Env: \href{https://www.jetbrains.com/}{IntelliJ}, \href{https://code.visualstudio.com/}{VSCode}, \href{https://developer.android.google.cn/studio}{Android Studio}, \href{https://developer.harmonyos.com/cn/develop/deveco-studio}{DevEco Studio} \separator 
+    \href{https://gradle.org/}{Gradle} \separator \href{https://www.cursor.com/}{Cursor} \separator \href{https://www.docker.com/}{Docker} \separator 
+    \href{https://git-scm.com/}{Git}
+    \item Trends Tech\footnote{集中于软件技术，包括但不限于编程语言、框架、工具、平台等，内容仅供参考}: \href{https://www.ibm.com/cn-zh/topics/large-language-models}{AI-LLM \footnote{ {\$36B equity investment , 2023 +111\% job postings difference 2022 }By mckinsey.com ; 个人：力大出奇迹，资源焚化器} } \separator 
+    \href{https://www.rust-lang.org/}{Rust} \separator \href{https://www.bigdata.com/}{BigData} \separator \href{https://baike.baidu.com/item/web3.0/4873257}{Web 3.0}
 \end{itemize}
+
 
 \section{工作经验}
 \company{XXXXX公司} 
@@ -143,9 +143,10 @@
     \item 项目目标: 实时监控IT基础设施，快速识别并使相关人员快速处理故障，提高系统可靠性，生成符合标准的报告
         \begin{itemize}
             \item 负责工作： 项目规划与任务分工、需求分析及交付文档编写 \separator 开发技术选型与架构配置、后端代码开发、代码审查 \separator 测试计划制定及执行
-            \item 项目细节与成效: 在团队高效沟通下，项目进展顺利。项目在前后端分离的情况下, 前端使用 \href{https://cn.vuejs.org/}{Vuejs} 基于 \href{https://ant.design/index-cn}{Ant Design} 来构建用户界面, 后端采用 \href{https://spring.io/}{Spring} 系列项目来搭建应用模块, 使用 \href{https://docs.spring.io/spring-framework/reference/web-reactive.html}{Spring WebFlux} + \href{https://spring.io/projects/spring-data-r2dbc}{R2DBC} 处理生成高效的 \href{https://www.ibm.com/cn-zh/topics/rest-apis}{Restful API}, 
+            \item 项目细节与成效: 在团队高效沟通下，项目进展顺利。项目在前后端分离的情况下, 前端使用 \href{https://cn.vuejs.org/}{Vuejs} 基于 \href{https://ant.design/index-cn}{Ant Design} 来构建用户界面,
+            后端采用 \href{https://spring.io/}{Spring} 系列项目来搭建应用模块, 使用 \href{https://docs.spring.io/spring-framework/reference/web-reactive.html}{Spring WebFlux} + \href{https://spring.io/projects/spring-data-r2dbc}{R2DBC} 处理生成高效的 \href{https://www.ibm.com/cn-zh/topics/rest-apis}{RESTful API}, 
             鉴权控制使用 \href{https://spring.io/projects/spring-security}{Spring Security} 同时为其他系统保留 \href{https://oauth.ac.cn/2/}{OAuth2.0 } 接口，使用 \href{https://www.mysql.com/cn/}{MySQL} 作为数据库底层，
-            采用基于\href{https://www.omg.org/spec/CMMN}{CMMN} 和 \href{https://www.omg.org/spec/BPMN/2.0}{BPMN2.0} 规范的 \href{https://www.flowable.com/open-source/docs/}{Flowable} 引擎来实现工作流, 这里遗憾的是其开源版本只有 Block-IO JPA 实现，由于时间关系并未补充其 NoBlock-IO 实现, 所以这里用了 \href{https://spring.io/projects/spring-data-jpa}{JPA} 。
+            采用基于\href{https://www.omg.org/spec/CMMN}{CMMN} 和 \href{https://www.omg.org/spec/BPMN/2.0}{BPMN2.0} 规范的 \href{https://www.flowable.com/open-source/docs/}{Flowable} 引擎来实现工作流, 这里遗憾的是其开源版本只有 Block-IO JPA 实现，由于时间关系并未补充其 NoBlock-IO 实现, 故而求其次采用 \href{https://spring.io/projects/spring-data-jpa}{JPA} 。
             同时项目使用 \href{https://spring.io/projects/spring-ai}{Spring AI} 融合 \href{https://qwen.readthedocs.io/zh-cn/latest/index.html}{qwen} 等模型建立生成式对话。
             项目使用 \href{https://about.gitea.com/}{Gitea} 在内部网络搭建仓库进行协同开发和管理。
         \end{itemize}
@@ -211,7 +212,14 @@
 \section{教育背景}
 \company{***} 
 \position{*** \separator ***，***学位}{}
-
 \daterange{*** - ***}
+
+\section{兴趣爱好}
+\begin{itemize}
+    \item New Tech: \href{https://kotlinlang.org/}{Kotlin} \footnote{Reasons：对变量类型的标注与声明，代码的优雅艺术；扩展和匿名，Bring us a whole new World ! } \separator \href{https://www.rust-lang.org/}{Rust} \footnote{Reasons：因对内存的控制，使程序更安全} \separator \href{https://www.cursor.com/}{Cursor\footnote{Reasons: Every one is a super big team with AI-LLM ! }}
+    \item Game: \href{https://lol.qq.com/}{League of Legends} \separator \href{https://store.steampowered.com/app/949230/Cities_Skylines_II/}{Cities: Skylines II} \separator \href{https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/}{Sid Meier's Civilization VI} \separator \href{https://store.steampowered.com/app/270880/American_Truck_Simulator/}{American Truck Simulator}
+    \item Sports\footnote{遗憾：运动使我快乐，但常常很少做或没时间去做 - 时间都去打游戏了}: 多种球类运动 \separator 骑行 \separator 跑步 
+\end{itemize}
+
 
 \end{document}
